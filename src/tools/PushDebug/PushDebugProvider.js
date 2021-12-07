@@ -10,13 +10,12 @@ export const PushDebugProvider = ({ children }) => {
 
   const messageDefault = JSON.stringify({
     "pn_debug": true,
-    "text": "This is test message from PubNub - #counter#",
+    "text": "This is test message - #counter#",
     "pn_apns": {
       "aps": {
         "alert": {
           "title": "PN Test Message - #counter#",
-          "body": "This is test message from PubNub - ask Mike Comer if you are concerned",
-          "content-available": "1"
+          "body": "This is a test message."
         },
       },
       "pn_push":[
@@ -26,7 +25,7 @@ export const PushDebugProvider = ({ children }) => {
           "targets":[
             {
               "environment":"production",
-              "topic":"com.everbridge.mobile.iv.Recipient"
+              "topic":"com.mycompany.app.abc"
             }
           ],
           "version":"v2"
@@ -36,7 +35,7 @@ export const PushDebugProvider = ({ children }) => {
     "pn_gcm": {
       "notification": {
         "title": "PN Test Message - #counter#",
-        "body": "This is test message from PubNub - ask Mike Comer if you are concerned"
+        "body": "This is test message."
       }
     }
   }, null, 2);
